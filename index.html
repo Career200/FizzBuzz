@@ -100,6 +100,7 @@
   function fizzBuzz(e) {
     let string = '';
     console.log('e3 ' + Boolean(e%3) + ' e5 '+ Boolean(e%5))
+    if (e == 0) {return 'sneaky! 0'}
     if (e%3 == 0) {string +='fizz';}
     if (e%5 == 0) {string +='buzz'}
     if (!string) {string = e}
