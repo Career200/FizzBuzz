@@ -87,23 +87,17 @@
     </div>
   <pre>
   <script id="script">
-
-  const input = document.getElementById('in')
-  const targetText = document.getElementById('answer')
-
-
-  document.addEventListener('change', (e) => {
-  let result = fizzBuzz(input.value)
-  targetText.innerHTML = result;
+  document.addEventListener('change', () => {
+  let result = fizzBuzz(document.getElementById('in').value)
+  document.getElementById('answer').innerHTML = result;
   })
 
-  function fizzBuzz(e) {
+  function fizzBuzz(givenNum) {
     let string = '';
-    console.log('e3 ' + Boolean(e%3) + ' e5 '+ Boolean(e%5))
-    if (e == 0) {return 'sneaky! 0'}
-    if (e%3 == 0) {string +='fizz';}
-    if (e%5 == 0) {string +='buzz'}
-    if (!string) {string = e}
+    if (givenNum == 0) {return 'sneaky! You can divide 0 by both 3 and 5 though, so fizbuzz'}
+    if (givenNum%3 == 0) {string +='fizz';}
+    if (givenNum%5 == 0) {string +='buzz'}
+    if (!string) {string = givenNum}
 
     return string
   }
